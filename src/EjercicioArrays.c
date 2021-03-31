@@ -20,7 +20,10 @@
 int main(void) {
 	setbuf(stdout, NULL);
 	int arrayEdades[CANTIDAD_EDADES];
-	int maximo = -1;
+	int maximo;
+	int minimo;
+	float promedio;
+	int suma;
 
 	for(int i = 0; i<CANTIDAD_EDADES;i++)
 	{
@@ -29,9 +32,22 @@ int main(void) {
 			printf("Error Fatal");
 		}
 	}
-	if(arr_calcularMaximoInt(&arrayEdades,CANTIDAD_EDADES,maximo)==0)
+	if(arr_calcularMaximoInt(&arrayEdades,CANTIDAD_EDADES,&maximo)==0)
 	{
-		printf("%d", maximo);
+		printf("El maximo es %d \n", maximo);
 	}
+	if(arr_calcularMinimoInt(&arrayEdades,CANTIDAD_EDADES,&minimo)==0)
+	{
+		printf("El minimo es %d \n", minimo);
+	}
+	if(arr_calcularPromedioInt(&arrayEdades,CANTIDAD_EDADES,&promedio)==0)
+	{
+		printf("El promedio es %f \n", promedio);
+	}
+	if(arr_calcularSumaInt(&arrayEdades,CANTIDAD_EDADES,&suma)==0)
+		{
+			printf("La suma es %d \n", suma);
+		}
+
 
 }
